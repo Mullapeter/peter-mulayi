@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wekesa Peter Mulayi — Accounting & Finance Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1D35;
+  --navy-mid:#122848;
+  --navy-soft:#1A3A5C;
+  --gold:#B8963E;
+  --gold-light:#D4AD5A;
+  --gold-pale:#F7F0DF;
+  --slate:#4A6080;
+  --silver:#8FA3BB;
+  --fog:#F4F7FA;
+  --white:#FFFFFF;
+  --text:#1C2B3A;
+  --muted:#5A7290;
+  --border:#D8E4EE;
+  --r:0.5rem;
+  --r-lg:1rem;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,29,53,0.97);backdrop-filter:blur(14px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;border-bottom:1px solid rgba(184,150,62,0.2)}
+.nav-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);letter-spacing:0.01em}
+.nav-name span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-hire{background:var(--gold);color:var(--navy);padding:0.45rem 1.1rem;border-radius:100px;font-size:0.82rem;font-weight:600;text-decoration:none;transition:background 0.2s}
+.nav-hire:hover{background:var(--gold-light)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:7rem 2.5rem 5rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg::before{content:'';position:absolute;top:-30%;right:-15%;width:70%;height:130%;background:radial-gradient(ellipse,rgba(184,150,62,0.07) 0%,transparent 60%)}
+.hero-bg::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(184,150,62,0.35),transparent)}
+/* ledger lines — the signature element */
+.ledger-lines{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;overflow:hidden}
+.ledger-lines::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(184,150,62,0.04) 59px,rgba(184,150,62,0.04) 60px)}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:center;position:relative;z-index:1}
+.hero-tag{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.6rem}
+.hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.5vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;color:var(--white);margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-tagline{font-size:1.05rem;color:rgba(255,255,255,0.55);line-height:1.75;max-width:480px;margin-bottom:2.5rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--navy);padding:0.8rem 1.9rem;border-radius:100px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-outline{border:1px solid rgba(255,255,255,0.25);color:var(--white);padding:0.8rem 1.75rem;border-radius:100px;font-weight:400;font-size:0.9rem;text-decoration:none;transition:border-color 0.2s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+/* Hero card */
+.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(184,150,62,0.2);border-radius:var(--r-lg);padding:2rem;display:flex;flex-direction:column;gap:1.25rem}
+.hero-award{background:linear-gradient(135deg,rgba(184,150,62,0.15),rgba(184,150,62,0.05));border:1px solid rgba(184,150,62,0.35);border-radius:var(--r);padding:1.25rem;text-align:center}
+.award-icon{font-size:2rem;margin-bottom:0.5rem}
+.award-label{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem}
+.award-text{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--white);line-height:1.4}
+.award-year{font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:0.25rem}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.h-stat{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r);padding:1rem;text-align:center}
+.h-stat .val{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold);line-height:1}
+.h-stat .lbl{font-size:0.7rem;color:rgba(255,255,255,0.4);margin-top:0.2rem;line-height:1.3}
+
+/* ── SHARED SECTION ── */
+section{padding:5.5rem 2.5rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.s-tag{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem}
+.s-tag::before{content:'';display:block;width:20px;height:1px;background:var(--gold)}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:0.75rem;letter-spacing:-0.02em}
+.s-sub{font-size:0.95rem;color:var(--muted);line-height:1.7;max-width:540px}
+.rule{height:1px;background:var(--border);margin:2.5rem 0}
+
+/* ── ABOUT ── */
+.about{background:var(--fog)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem}
+.about-body p{font-size:0.92rem;color:var(--muted);line-height:1.8;margin-bottom:1rem}
+.about-body p strong{color:var(--text);font-weight:600}
+.cert-grid{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.5rem}
+.cert-item{display:flex;align-items:center;gap:1rem;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:0.875rem 1.1rem}
+.cert-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.cert-item .cert-name{font-size:0.85rem;font-weight:600;color:var(--text)}
+.cert-item .cert-status{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--gold);margin-left:auto;background:var(--gold-pale);padding:0.2rem 0.6rem;border-radius:100px}
+.lang-row{display:flex;gap:1rem;margin-top:1.5rem}
+.lang-pill{background:var(--navy);color:var(--white);padding:0.5rem 1.1rem;border-radius:100px;font-size:0.8rem;font-weight:500;display:flex;align-items:center;gap:0.5rem}
+.lang-pill span{font-size:0.7rem;color:var(--silver)}
+
+/* ── SKILLS ── */
+.skills{background:var(--navy)}
+.skills .s-title{color:var(--white)}
+.skills .s-sub{color:rgba(255,255,255,0.45)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.skill-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:1.75rem;transition:border-color 0.25s,transform 0.25s;position:relative;overflow:hidden}
+.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity 0.25s}
+.skill-card:hover{border-color:rgba(184,150,62,0.4);transform:translateY(-3px)}
+.skill-card:hover::before{opacity:1}
+.skill-icon{font-size:1.6rem;margin-bottom:1rem}
+.skill-card h3{font-size:0.9rem;font-weight:600;color:var(--white);margin-bottom:0.4rem;line-height:1.4}
+.skill-card p{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.6}
+
+/* ── EXPERIENCE ── */
+.experience{background:var(--white)}
+.exp-block{margin-top:3rem;background:var(--fog);border:1px solid var(--border);border-radius:var(--r-lg);padding:2.5rem;position:relative;overflow:hidden}
+.exp-block::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;gap:1rem;flex-wrap:wrap}
+.exp-company{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy)}
+.exp-role{font-size:0.85rem;color:var(--gold);font-weight:600;margin-top:0.2rem}
+.exp-period{font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--muted);background:var(--white);border:1px solid var(--border);padding:0.35rem 0.85rem;border-radius:100px;white-space:nowrap}
+.exp-duties{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
+.duty{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.84rem;color:var(--muted);line-height:1.5}
+.duty::before{content:'→';color:var(--gold);flex-shrink:0;font-size:0.8rem;margin-top:0.05rem}
+
+/* ── EDUCATION ── */
+.education{background:var(--fog)}
+.edu-card{margin-top:2.5rem;display:flex;gap:2rem;align-items:flex-start}
+.edu-year{font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--gold);white-space:nowrap;padding-top:0.3rem}
+.edu-body{border-left:2px solid var(--border);padding-left:2rem;flex:1}
+.edu-body h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:0.25rem}
+.edu-body .school{font-size:0.88rem;color:var(--gold);font-weight:600;margin-bottom:0.5rem}
+.edu-body p{font-size:0.85rem;color:var(--muted);line-height:1.6}
+
+/* ── CERTIFICATIONS ── */
+.certs-section{background:var(--white)}
+.certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}
+.cert-card{border:1px solid var(--border);border-radius:var(--r-lg);padding:1.75rem;transition:border-color 0.2s,box-shadow 0.2s}
+.cert-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(184,150,62,0.08)}
+.cert-card .c-icon{font-size:1.5rem;margin-bottom:1rem}
+.cert-card h3{font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:0.3rem}
+.cert-card p{font-size:0.8rem;color:var(--muted)}
+.cert-card .c-badge{display:inline-block;margin-top:0.75rem;font-family:'DM Mono',monospace;font-size:0.68rem;padding:0.25rem 0.65rem;border-radius:100px;font-weight:500}
+.c-badge.active{background:var(--gold-pale);color:var(--gold)}
+.c-badge.done{background:#EEF6EE;color:#2E7D32}
+.cert-card a{display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.75rem;color:var(--gold);text-decoration:none;font-weight:500}
+.cert-card a:hover{text-decoration:underline}
+
+/* ── CONTACT ── */
+.contact-section{background:var(--navy);text-align:center;padding:6rem 2.5rem}
+.contact-section .s-tag{justify-content:center}
+.contact-section .s-tag::before{display:none}
+.contact-section .s-title{color:var(--white);margin-bottom:0.75rem}
+.contact-section .s-sub{color:rgba(255,255,255,0.5);margin:0 auto 3rem}
+.contact-cards{display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap;margin-bottom:3rem}
+.contact-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-lg);padding:1.5rem 2rem;min-width:200px;transition:border-color 0.2s}
+.contact-card:hover{border-color:rgba(184,150,62,0.4)}
+.contact-card .cc-icon{font-size:1.4rem;margin-bottom:0.6rem}
+.contact-card h5{font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);margin-bottom:0.35rem}
+.contact-card a,.contact-card p{font-size:0.88rem;color:var(--white);text-decoration:none;display:block}
+.contact-card a:hover{color:var(--gold)}
+.social-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.social-btn{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);padding:0.6rem 1.25rem;border-radius:100px;font-size:0.83rem;font-weight:500;text-decoration:none;transition:background 0.2s,border-color 0.2s,color 0.2s}
+.social-btn:hover{background:rgba(184,150,62,0.15);border-color:var(--gold);color:var(--gold)}
+.social-btn svg{width:16px;height:16px;flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{background:rgba(5,15,28,1);padding:2rem 2.5rem;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+footer p{font-size:0.78rem;color:rgba(255,255,255,0.25)}
+.footer-name{font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--gold)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .hero-card{display:none}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .exp-duties{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  nav{padding:0 1.25rem}
+  .nav-links{display:none}
+  section{padding:4rem 1.25rem}
+  .hero{padding:6rem 1.25rem 4rem}
+  .skills-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">Wekesa <span>Peter</span> Mulayi</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:petermulla44@gmail.com" class="nav-hire">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="ledger-lines"></div>
+  <div class="hero-inner">
+    <div class="reveal">
+      <div class="hero-tag">Accounting &amp; Finance Professional</div>
+      <h1>Numbers tell<br>the <em>truth.</em><br>I tell the story.</h1>
+      <p class="hero-tagline">Detail-oriented B.Com graduate specialising in financial reporting, audit support, and tax compliance — built for the African business landscape.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-gold">Get in touch</a>
+        <a href="#experience" class="btn-outline">View my work</a>
+      </div>
+    </div>
+    <div class="hero-card reveal" style="transition-delay:0.2s">
+      <div class="hero-award">
+        <div class="award-icon">🏆</div>
+        <div class="award-label">Award</div>
+        <div class="award-text">Second Best Accounting Student</div>
+        <div class="award-year">Africa Nazarene University · 2023</div>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat">
+          <div class="val">B.Com</div>
+          <div class="lbl">Accounting Option</div>
+        </div>
+        <div class="h-stat">
+          <div class="val">4+</div>
+          <div class="lbl">Certifications</div>
+        </div>
+        <div class="h-stat">
+          <div class="val">2</div>
+          <div class="lbl">Languages</div>
+        </div>
+        <div class="h-stat">
+          <div class="val">2026</div>
+          <div class="lbl">Ready to hire</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="s-tag">Who I am</div>
+    <h2 class="s-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>I am <strong>Wekesa Peter Mulayi</strong>, a Bachelor of Commerce graduate (Accounting Option) from Africa Nazarene University, class of 2025. My academic journey was recognised with the <strong>Second Best Accounting Student Award in 2023</strong> — a milestone that reflects both my passion for the discipline and my commitment to excellence.</p>
+        <p>My professional foundation is built across financial reporting, payroll preparation, tax compliance (VAT, PAYE, Withholding Tax), and audit readiness. I am currently pursuing my <strong>CPA qualification</strong> and hold a CFA certificate, complemented by training in data analytics.</p>
+        <p>My goal is to contribute to organisations that value precision, integrity, and data-driven financial decision-making — and ultimately to grow into a senior finance leadership role serving African businesses.</p>
+        <div class="lang-row" style="margin-top:1.75rem">
+          <div class="lang-pill">🇬🇧 English <span>Fluent</span></div>
+          <div class="lang-pill">🇰🇪 Swahili <span>Fluent</span></div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.15s">
+        <div class="s-tag" style="margin-bottom:1rem">Certifications</div>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="cert-name">CPA — Certified Public Accountant</div>
+            </div>
+            <span class="cert-status">Ongoing</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="cert-name">CFA — Chartered Financial Analyst</div>
+            </div>
+            <span class="cert-status">2023–24</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="cert-name">Data Analytics Certificate</div>
+            </div>
+            <span class="cert-status">Sep–Dec 2025</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="cert-name">Innovation Certificate</div>
+            </div>
+            <span class="cert-status">2022</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-inner">
+    <div class="s-tag">What I do</div>
+    <h2 class="s-title">Core Skills</h2>
+    <p class="s-sub">A focused skillset built through formal education, professional attachment, and continuous certification.</p>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <h3>Financial Accounting &amp; Reporting</h3>
+        <p>Preparation and analysis of financial statements in line with IFRS standards and organisational requirements.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💼</div>
+        <h3>Payroll Preparation &amp; Expense Verification</h3>
+        <p>End-to-end payroll processing, statutory deductions, and verification of staff expense claims for accuracy.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🏛️</div>
+        <h3>Tax Compliance</h3>
+        <p>Proficient in VAT, PAYE, and Withholding Tax schedules — ensuring timely filing and regulatory compliance.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔍</div>
+        <h3>Audit Support</h3>
+        <p>Preparation of audit schedules, documentation, and liaison support for both internal and external audit exercises.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📈</div>
+        <h3>Budgeting &amp; Forecasting</h3>
+        <p>Developing departmental budgets, variance analysis, and financial projections to support strategic planning.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🖥️</div>
+        <h3>Data Analytics</h3>
+        <p>Applying data tools to extract financial insights, identify trends, and support evidence-based business decisions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-inner">
+    <div class="s-tag reveal">Professional Experience</div>
+    <h2 class="s-title reveal">Work History</h2>
+    <div class="exp-block reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Context Expert Agencies</div>
+          <div class="exp-role">Accountant Attachée</div>
+        </div>
+        <div class="exp-period">May 2024 – Aug 2024</div>
+      </div>
+      <div class="exp-duties">
+        <div class="duty">Prepared and reviewed financial statements for management reporting</div>
+        <div class="duty">Supported payroll processing and statutory deduction schedules</div>
+        <div class="duty">Performed bank and account reconciliations to ensure accuracy</div>
+        <div class="duty">Prepared tax schedules including VAT, PAYE, and Withholding Tax</div>
+        <div class="duty">Assisted in audit readiness — compiling documentation and schedules</div>
+        <div class="duty">Verified and processed staff expense claims and petty cash</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+  <div class="section-inner">
+    <div class="s-tag reveal">Academic Background</div>
+    <h2 class="s-title reveal">Education</h2>
+    <div class="edu-card reveal">
+      <div class="edu-year">2021–2025</div>
+      <div class="edu-body">
+        <h3>Bachelor of Commerce — Accounting Option</h3>
+        <div class="school">Africa Nazarene University, Kenya</div>
+        <p>Four-year undergraduate programme covering financial accounting, management accounting, taxation, auditing, business law, and economics. Graduated with distinction in core accounting modules.</p>
+        <div style="margin-top:1rem;display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold-pale);border:1px solid rgba(184,150,62,0.3);border-radius:var(--r);padding:0.6rem 1rem">
+          <span style="font-size:1.1rem">🏆</span>
+          <span style="font-size:0.82rem;font-weight:600;color:var(--navy)">Second Best Accounting Student Award — 2023</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-section" id="certifications">
+  <div class="section-inner">
+    <div class="s-tag reveal">Credentials</div>
+    <h2 class="s-title reveal">Certifications &amp; Achievements</h2>
+    <div class="certs-grid reveal">
+      <div class="cert-card">
+        <div class="c-icon">📜</div>
+        <h3>CPA — Certified Public Accountant</h3>
+        <p>Professional accounting certification covering financial reporting, audit, taxation, and governance.</p>
+        <span class="c-badge active">In Progress</span>
+      </div>
+      <div class="cert-card">
+        <div class="c-icon">💹</div>
+        <h3>CFA — Chartered Financial Analyst</h3>
+        <p>Globally recognised investment and financial analysis qualification covering portfolio management and ethics.</p>
+        <span class="c-badge done">2023 – 2024</span>
+      </div>
+      <div class="cert-card">
+        <div class="c-icon">🖥️</div>
+        <h3>Data Analytics Certificate</h3>
+        <p>Training in data tools and techniques for business intelligence, financial analysis, and reporting.</p>
+        <span class="c-badge done">Sep – Dec 2025</span>
+        <br>
+        <a href="https://www.linkedin.com/posts/peter-mulayi-3958bb267_as-a-recent-graduate-of-accounting-i-have-share-7425136856348041216-n7SL/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 114.73 5a1.77 1.77 0 011.77 1.73zM20 19h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V19h-3V8h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59V19z"/></svg>
+          View on LinkedIn
+        </a>
+      </div>
+      <div class="cert-card">
+        <div class="c-icon">💡</div>
+        <h3>Innovation Certificate</h3>
+        <p>Certificate in innovation and entrepreneurial thinking applied to business and financial problem-solving.</p>
+        <span class="c-badge done">2022</span>
+        <br>
+        <a href="https://www.linkedin.com/posts/peter-mulayi-3958bb267_this-article-explains-the-importance-of-accounting-ugcPost-7412178369666080768-jPok/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 114.73 5a1.77 1.77 0 011.77 1.73zM20 19h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V19h-3V8h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59V19z"/></svg>
+          View on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="s-tag">Let's connect</div>
+    <h2 class="s-title reveal">Get In Touch</h2>
+    <p class="s-sub reveal">Open to full-time roles, internships, and freelance accounting engagements. I respond within 24 hours.</p>
+    <div class="contact-cards reveal">
+      <div class="contact-card">
+        <div class="cc-icon">📞</div>
+        <h5>Phone / WhatsApp</h5>
+        <a href="tel:+254745803091">+254 745 803 091</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">✉️</div>
+        <h5>Email</h5>
+        <a href="mailto:petermulla44@gmail.com">petermulla44@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">📍</div>
+        <h5>Location</h5>
+        <p>Nairobi, Kenya</p>
+      </div>
+    </div>
+    <div class="social-row reveal">
+      <a href="https://www.linkedin.com/in/peter-mulayi-3958bb267" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 114.73 5a1.77 1.77 0 011.77 1.73zM20 19h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V19h-3V8h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59V19z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://x.com/mullakitalean" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter / X
+      </a>
+      <a href="https://www.instagram.com/mulayi_peter/" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+      <a href="https://wa.me/254745803091?text=Hi%20Peter%2C%20I%20came%20across%20your%20website%20and%20would%20like%20to%20connect." target="_blank" class="social-btn" style="background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.3);color:#25D366">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span class="footer-name">Wekesa Peter Mulayi</span>. All rights reserved.</p>
+  <p style="font-size:0.72rem;color:rgba(255,255,255,0.2)">Accounting &amp; Finance Professional · Nairobi, Kenya</p>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => io.observe(el));
+
+// Nav bg on scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background =
+    window.scrollY > 50 ? 'rgba(11,29,53,0.99)' : 'rgba(11,29,53,0.97)';
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
